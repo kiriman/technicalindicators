@@ -46,7 +46,7 @@ export class MFI extends Indicator {
         let typicalPriceValue = null;
         let prevousTypicalPrice = null;
         tick = yield;
-        lastClose = tick.close; //Fist value 
+        lastClose = tick.close; //Fist value
         tick = yield;
         while (true)
         {
@@ -61,7 +61,7 @@ export class MFI extends Indicator {
             negativeFlow.push(negativeMoney)
             positiveFlowForPeriod = positiveFlow.periodSum;
             negativeFlowForPeriod = negativeFlow.periodSum;
-            if((positiveFlow.totalPushed >= period) && (positiveFlow.totalPushed >= period)) {
+            if((positiveFlow.totalPushed >= period) && (negativeFlow.totalPushed >= period)) {
                 moneyFlowRatio = positiveFlowForPeriod / negativeFlowForPeriod;
                 result = 100 - 100 / ( 1 + moneyFlowRatio);
             }
